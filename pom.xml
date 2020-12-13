@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.mdashlw.hypixel</groupId>
+    <artifactId>hypixel-ranked-api</artifactId>
+    <version>4.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>ru.mdashlw.hypixel hypixel-ranked-api</name>
+    <description>Java Hypixel Ranked API wrapper</description>
+    <url>https://github.com/mdashlw/hypixel-ranked-api</url>
+    <inceptionYear>2019</inceptionYear>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://opensource.org/licenses/mit-license.php</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>mdashlw</id>
+            <name>Davyd Malikov</name>
+            <email>mdashlw@gmail.com</email>
+            <roles>
+                <role>Maintainer</role>
+            </roles>
+            <timezone>Europe/Moscow</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/mdashlw/hypixel-ranked-api</connection>
+        <developerConnection>scm:git:https://github.com/mdashlw/hypixel-ranked-api</developerConnection>
+        <url>https://github.com/mdashlw/hypixel-ranked-api</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/mdashlw/hypixel-ranked-api/issues</url>
+    </issueManagement>
+    <distributionManagement>
+        <repository>
+            <id>bintray-mdashlw-maven</id>
+            <name>mdashlw-maven</name>
+            <url>https://api.bintray.com/maven/mdashlw/maven/hypixel-ranked-api/;publish=1</url>
+        </repository>
+    </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>3.14.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>ru.mdashlw.hypixel</groupId>
+            <artifactId>hypixel-api</artifactId>
+            <version>6.0.3</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>jcenter</id>
+            <name>JCenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>jcenter</id>
+            <name>JCenter</name>
+            <url>https://jcenter.bintray.com/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
